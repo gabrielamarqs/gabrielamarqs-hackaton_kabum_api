@@ -1,6 +1,9 @@
 name: deploy-rest-api-hackaton
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main

@@ -1,0 +1,27 @@
+name: deploy-rest-api-hackaton
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Deploy to DigitalOcean
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            git clone git@github.com:gabrielamarqs/hackaton_kabum_api.git
+            cd /root/hackaton_kabum_api
+            git pull origin main
+            mvn package -Dmaven.test.skip=true
+#            java -jar target/HackatonKabum-0.0.1-SNAPSHOT.jar
+          # Comandos adicionais de implantação

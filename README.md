@@ -9,8 +9,7 @@
 
 <p align="center" >
   <a href="#sobre-o-projeto" >Sobre o Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#esclarecimentos" >Esclarecimentos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#funcionamento" >Funcionamento</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#problematica" >Problemática</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#como-executar" >Como executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#licença" >Licença</a>
 </p>
@@ -21,7 +20,7 @@ Esse projeto foi desenvolvido tecnicamante por **Gabriela Marques**:[linkedIn](h
 
 A Designer responsável pelas interfaces foi a **Malu Gurgel**:[linkedIn](https://www.linkedin.com/in/malu-gurgel-66456a265). E a reponsável pelo Marketing é a **Rebeca Alves**-[linkedIn](https://www.linkedin.com/in/rebeca-alves-mendes-060990195/).
 
-#### Problemática:
+## Problematica:
 A Pesquisa Game Brasil (PGB) 2021 revelou que 51,5% dos gamers no Brasil são mulheres. No entanto, não se fala muito sobre o cenário feminino nos campeonatos e eventos de game player. A pesquisa feita pelas desenvolvedoras do projeto em 2024 contou com 50 entrevistadas e constatou que a principal queixa é a falta de representatividade feminina, o que desmotiva e invisibiliza as jogadoras. Além disso, a descentralização das informações dificulta o acesso a oportunidades e recursos, isolando ainda mais as mulheres.
 #### Solução:
 Para mudar esse quadro, a plataforma Game.Her surgiu para promover eventos mais inclusivos e centralizar as informações, facilitando o acesso das jogadoras a tudo que a indústria oferece. Essas ações não só promoverão a igualdade, mas também trarão mais inovação e diversidade para o mundo dos games.

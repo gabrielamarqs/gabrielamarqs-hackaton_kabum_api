@@ -41,6 +41,7 @@ public class EventService {
         event.setType(createEventDTO.getType());
         event.setGame(createEventDTO.getGame());
         event.setHour(createEventDTO.getHour());
+        event.setPublicType(createEventDTO.getPublicType());
         event.setCashPrize(createEventDTO.getCashPrize());
         event.setDescription(createEventDTO.getDescription());
         event.setDate(createEventDTO.getDate());

@@ -1,5 +1,6 @@
 package com.example.HackatonKabum.model.dto;
 
+import com.example.HackatonKabum.model.enumerator.Public;
 import com.example.HackatonKabum.model.enumerator.CardType;
 import lombok.Data;
 
@@ -11,6 +12,7 @@ public class CreateEventDTO {
     private String type;
     private String game;
     private double cashPrize;
+    private Public publicType;
     private String description;
     private String hour;
     private String number;

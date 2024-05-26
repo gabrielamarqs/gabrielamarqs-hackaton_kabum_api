@@ -1,5 +1,6 @@
 package com.example.HackatonKabum.model;
 
+import com.example.HackatonKabum.model.enumerator.Public;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -22,6 +23,9 @@ public class Event {
 //    rankiado, 2v2, campeonato
     @Column(name = "event_type", nullable = false)
     private String type;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "event_public", nullable = false)
+    private Public publicType;
     @Column(name = "event_description", nullable = false)
     private String description;
     @Column(name = "event_game", nullable = false)

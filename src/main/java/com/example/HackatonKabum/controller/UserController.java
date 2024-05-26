@@ -6,6 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.security.auth.login.LoginException;
+import java.util.List;
+import java.util.UUID;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -23,21 +25,33 @@ public class UserController {
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<User> register(@RequestBody User signUpDTO) throws Exception {
-        User registeredUser = userService.signUp(signUpDTO);
+    public ResponseEntity<String> register(@RequestBody User signUp) throws Exception {
+        String registeredUser = userService.signUp(signUp);
         return ResponseEntity.ok(registeredUser);
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody User loginDTO) throws LoginException {
-        User loggedUser = userService.login(loginDTO);
-        return ResponseEntity.ok("User " + loggedUser.getUsername() + " logged in");
+    public ResponseEntity<String> login(@RequestBody User login) throws LoginException {
+        String loggedUser = userService.login(login);
+        return ResponseEntity.ok(loggedUser);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<String> update(@RequestBody User loginDTO) throws LoginException {
-        User loggedUser = userService.login(loginDTO);
-        return ResponseEntity.ok("User " + loggedUser.getUsername() + " logged in");
+    @PutMapping("/update/{id}")
+    public ResponseEntity<String> update(@PathVariable UUID id, @RequestBody User userUpdate) throws LoginException {
+        String updatedUser = userService.updateUser(id, userUpdate);
+        return ResponseEntity.ok("User " + updatedUser + " updated successfully.");
+    }
+
+    @GetMapping
+    public ResponseEntity<List<User>> getAllUsers() {
+        List<User> users = userService.getAllUsers();
+        return ResponseEntity.ok(users);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<User> getUserById(@PathVariable UUID id) throws LoginException {
+        User user = userService.getUserId(id);
+        return ResponseEntity.ok(user);
     }
 
 }

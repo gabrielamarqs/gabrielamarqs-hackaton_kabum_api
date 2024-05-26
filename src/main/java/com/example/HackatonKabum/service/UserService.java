@@ -6,18 +6,20 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.security.auth.login.LoginException;
+import java.util.List;
+import java.util.UUID;
 
 @Service
 @AllArgsConstructor
 public class UserService {
     private final UserRepository userRepository;
 
-    public User signUp (User input) throws Exception {
+    public String signUp (User input) throws Exception {
         if (userRepository.findByEmail(input.getEmail()) != null) {
-            throw new Exception("Email already registered");
+            return "Email já cadastrado";
         }
         if (userRepository.findByUsername(input.getUsername()) != null) {
-            throw new Exception("Username already registered");
+            return "Username já cadastrado";
         }
         User user = new User();
         user.setName(input.getName());
@@ -26,16 +28,36 @@ public class UserService {
         user.setPassword(input.getPassword());
         user.setUsername(input.getUsername());
         user.setRole(input.getRole());
-        return userRepository.save(user);
+        return "Usuário cadastrado com sucesso";
     }
 
-    public User login(User loginDTO) throws LoginException {
+    public String login(User loginDTO) throws LoginException {
         User userEmail = userRepository.findByEmail(loginDTO.getEmail());
-        User userPassword = userRepository.findByPassword(loginDTO.getPassword());
-        if (userEmail == null || userPassword == null) {
-            throw new LoginException("Invalid email or password");
+//        User userPassword = userRepository.findByPassword(loginDTO.getPassword());
+        if (userEmail == null) {
+            return "Email ou senha inválidos.";
         } else {
-            return userRepository.findByEmailAndPassword(loginDTO.getEmail(), loginDTO.getPassword());
+            if (userEmail.getPassword().equals(loginDTO.getPassword())) {
+                return userEmail.getUsername();
+            } else {
+                return "Email ou senha inválidos.";
+            }
         }
+    }
+
+    public String updateUser(UUID id, User userUpdate) {
+        User user = userRepository.findById(id).get();
+        user.setName(userUpdate.getName());
+        user.setUsername(userUpdate.getUsername());
+        userRepository.save(user);
+        return user.getUsername();
+    }
+
+    public User getUserId(UUID id) {
+        return userRepository.findById(id).get();
+    }
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 }

@@ -1,5 +1,6 @@
 package com.example.HackatonKabum.model;
 
+import com.example.HackatonKabum.model.enumerator.Gender;
 import com.example.HackatonKabum.model.enumerator.Role;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -26,8 +27,9 @@ public class User {
     private String username;
     @Column(name = "user_password", nullable = false, updatable = false)
     private String password;
+    @Enumerated(EnumType.STRING)
     @Column(name = "user_gender", nullable = false)
-    private String gender;
+    private Gender gender;
     @Column(name = "user_email", unique = true, nullable = false, updatable = false)
     private String email;
     @Enumerated(EnumType.STRING)

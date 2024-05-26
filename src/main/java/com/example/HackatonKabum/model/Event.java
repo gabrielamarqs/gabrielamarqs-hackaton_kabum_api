@@ -27,7 +27,7 @@ public class Event {
     @Column(name = "event_game", nullable = false)
     private String game;
     @Column(name = "event_date", nullable = false)
-    private String date;
+    private LocalDate date;
     @Column(name = "event_hour", nullable = false)
     private String hour;
 //    link para cadastro

@@ -1,6 +1,9 @@
 package com.example.HackatonKabum.model.dto;
 
+import com.example.HackatonKabum.model.enumerator.CardType;
 import lombok.Data;
+
+import java.time.LocalDate;
 
 @Data
 public class CreateEventDTO {
@@ -11,9 +14,10 @@ public class CreateEventDTO {
     private String description;
     private String hour;
     private String number;
-    private String date;
+    private LocalDate date;
     private String cpf;
-    private String cardType;
+    private double price;
+    private CardType cardType;
     private String verificationCode;
     private String expirationDate;
 }

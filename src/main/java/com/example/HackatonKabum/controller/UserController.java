@@ -54,4 +54,10 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
+    @GetMapping("/username/{username}")
+    public ResponseEntity<User> getUserByUsername(@PathVariable String username) throws LoginException {
+        User user = userService.getUserByUsername(username);
+        return ResponseEntity.ok(user);
+    }
+
 }

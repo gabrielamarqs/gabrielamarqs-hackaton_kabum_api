@@ -1,5 +1,6 @@
 package com.example.HackatonKabum.model;
 
+import com.example.HackatonKabum.model.enumerator.CardType;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
@@ -20,10 +21,13 @@ public class Card {
     private String number;
     @Column(name = "card_cpf")
     private String cpf;
+    @Column(name = "card_price")
+    private double price;
     @Transient
     private String verificationCode;
+    @Enumerated(EnumType.STRING)
     @Transient
-    private String cardType;
+    private CardType cardType;
     @Transient
     private String expirationDate;
 

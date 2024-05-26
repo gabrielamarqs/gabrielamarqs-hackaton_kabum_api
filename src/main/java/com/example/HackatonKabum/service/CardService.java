@@ -20,6 +20,7 @@ public class CardService {
         Card card = new Card();
         card.setNumber(input.getNumber());
         card.setCpf(input.getCpf());
+        card.setPrice(input.getPrice());
         card.setCardType(input.getCardType());
         card.setVerificationCode(input.getVerificationCode());
         card.setExpirationDate(input.getExpirationDate());

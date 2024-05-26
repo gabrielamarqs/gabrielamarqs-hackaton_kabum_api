@@ -23,7 +23,13 @@ public class Card {
     @Transient
     private String verificationCode;
     @Transient
-    private String type;
+    private String cardType;
+    @Transient
+    private String expirationDate;
+
+    @OneToOne(mappedBy = "card", fetch = FetchType.LAZY)
+    private Event event;
+
     @CreationTimestamp(source = SourceType.DB)
     @Column(name = "card_created_at", nullable = false, updatable = false)
     private LocalDate createdAt;

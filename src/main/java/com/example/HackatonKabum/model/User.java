@@ -1,12 +1,15 @@
 package com.example.HackatonKabum.model;
 
 import com.example.HackatonKabum.model.enumerator.Role;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.SourceType;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 @Data
@@ -27,17 +30,14 @@ public class User {
     private String gender;
     @Column(name = "user_email", unique = true, nullable = false, updatable = false)
     private String email;
-    @Column(name = "user_image")
-    private String image;
     @Enumerated(EnumType.STRING)
     @Column(name = "user_role", nullable = false, updatable = false)
     private Role role;
-    @ManyToOne
-    @JoinColumn(name = "card_id", updatable = false)
-    private Card card;
-    @ManyToOne
-    @JoinColumn(name = "event_id", updatable = false)
-    private Event event;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Event> events = new HashSet<>();
+
     @CreationTimestamp(source = SourceType.DB)
     @Column(name = "user_created_at", nullable = false, updatable = false)
     private LocalDate createdAt;

@@ -28,6 +28,7 @@ public class UserService {
         user.setPassword(input.getPassword());
         user.setUsername(input.getUsername());
         user.setRole(input.getRole());
+        userRepository.save(user);
         return "Usuário cadastrado com sucesso";
     }
 

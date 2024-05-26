@@ -1,5 +1,6 @@
 package com.example.HackatonKabum.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
@@ -23,21 +24,28 @@ public class Event {
     private String type;
     @Column(name = "event_description", nullable = false)
     private String description;
-    @Column(name = "event_tags", nullable = false)
-    private String tags;
+    @Column(name = "event_game", nullable = false)
+    private String game;
     @Column(name = "event_date", nullable = false)
-    private LocalDate date;
+    private String date;
     @Column(name = "event_hour", nullable = false)
     private String hour;
-    @Column(name = "event_image")
-    private String image;
 //    link para cadastro
-    @Column(name = "event_link")
-    private String link;
     @Column(name = "event_cash_prize")
-    private String cashPrize;
+    private double cashPrize;
     @Column(name = "event_status", nullable = false)
-    private String status;
+    private boolean status;
+
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @JsonIgnore
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @JoinColumn(name = "card_id")
+    private Card card;
+
     @CreationTimestamp(source = SourceType.DB)
     @Column(name = "event_created_at", nullable = false, updatable = false)
     private LocalDate createdAt;

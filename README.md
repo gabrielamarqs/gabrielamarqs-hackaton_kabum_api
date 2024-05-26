@@ -19,7 +19,7 @@
 ## Sobre o Projeto 
 Esse projeto foi desenvolvido tecnicamante por **Gabriela Marques**:[linkedIn](https://www.linkedin.com/in/gabriela-marques-dos-santos-899092161/)-[github](https://github.com/gabrielamarqs), **Mayara Spieker**:[linkedIn](https://www.linkedin.com/in/mayara-spieker/)-[github](https://github.com/mayspiek) e **Eliana Almeida**:[linkedIn](https://www.linkedin.com/in/elianaalmeida/)-[github](https://github.com/Eliana100) como uma solução para o hackaton .
 
-A Designer responsável pelas interfaces foi a **Maria Luiza**:[linkedIn](https://www.linkedin.com/in/malu-gurgel-66456a265). E a reponsável pelo Marketing é a **Rebeca Alves**-[linkedIn](https://www.linkedin.com/in/rebeca-alves-mendes-060990195/).
+A Designer responsável pelas interfaces foi a **Malu Gurgel**:[linkedIn](https://www.linkedin.com/in/malu-gurgel-66456a265). E a reponsável pelo Marketing é a **Rebeca Alves**-[linkedIn](https://www.linkedin.com/in/rebeca-alves-mendes-060990195/).
 
 #### Problemática:
 A Pesquisa Game Brasil (PGB) 2021 revelou que 51,5% dos gamers no Brasil são mulheres. No entanto, não se fala muito sobre o cenário feminino nos campeonatos e eventos de game player. A pesquisa feita pelas desenvolvedoras do projeto em 2024 contou com 50 entrevistadas e constatou que a principal queixa é a falta de representatividade feminina, o que desmotiva e invisibiliza as jogadoras. Além disso, a descentralização das informações dificulta o acesso a oportunidades e recursos, isolando ainda mais as mulheres.
